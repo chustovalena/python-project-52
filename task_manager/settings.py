@@ -20,7 +20,12 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("DEBUG", False)
 
 
-ALLOWED_HOSTS = ['webserver', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'webserver',
+    '127.0.0.1',
+    'localhost',
+    'python-project-52-xblt.onrender.com'
+]
 
 
 # Application definition
