@@ -12,3 +12,6 @@ migrate:
 
 collectstatic:
 	uv run manage.py collectstatic
+
+dev:
+	uv run manage.py runserver
