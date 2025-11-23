@@ -2,12 +2,14 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 import dj_database_url
+from django.contrib.messages import constants as message_constants
 
 
 load_dotenv()
 
 
-
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'task_manager',
+    'task_manager.user',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +135,12 @@ if not DEBUG:
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+MESSAGE_TAGS = {
+    message_constants.DEBUG: "secondary",
+    message_constants.INFO: "info",
+    message_constants.SUCCESS: "success",
+    message_constants.WARNING: "warning",
+    message_constants.ERROR: "danger",
+}
