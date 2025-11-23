@@ -29,10 +29,23 @@
             <li class="nav-item">
               <a class="nav-link" href="/users/create/">Регистрация</a>
             </li>
-          
+            <form method="post" class="nav-item" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" class="nav-link">Выйти</button>
+            </form>
         </ul>
       </div>
     </nav>
+    {% if messages %}
+    <div class="container mt-3">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
     <main class="flex-grow-1">
         <div class="container py-4">
             {% block content %}{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container-fluid flex-grow-1">
+        <h1 class="my-4">Пользователи</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr class="fw-weight-bold">
+                    <th scope="col" >id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">created at</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.first_name}} {{user.last_name}}</td>
+                    <td>{{user.date_joined}}</td>
+                    <td>
+                        <a href="{% url 'users:update' user.id %}">Изменить</a><br>
+                        <a href="{% url 'users:delete' user.id %}">Удалить</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}
