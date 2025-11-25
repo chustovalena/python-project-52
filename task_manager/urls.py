@@ -9,7 +9,7 @@ urlpatterns = [
     path('users/', include(('task_manager.user.urls', 'users'), namespace='users')),
     path('statuses/', include(('task_manager.status.urls', 'statuses'), namespace='statuses')),
     path('tasks/', include(('task_manager.task.urls', 'tasks'), namespace='tasks')),
-    path('labels/', include(('task_manager.labels.urls', 'labels'), namespace='labels')),
+    path('labels/', include(('task_manager.label.urls', 'labels'), namespace='labels')),
     path('admin/', admin.site.urls),
 ]
 
