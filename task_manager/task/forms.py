@@ -20,11 +20,12 @@ class TaskForm(forms.ModelForm):
 
     class Meta:
         model = Task
-        fields = ['name', 'description', 'status', 'executor']
+        fields = ['name', 'description', 'status', 'executor', 'labels']
 
         widgets = {
-            'status': forms.Select(),
-            'executor': forms.Select()
+            'status': forms.Select(attrs={'class': 'form-control'}),
+            'executor': forms.Select(attrs={'class': 'form-control'}),
+            'labels': forms.SelectMultiple(attrs={'class': 'form-control'})
         }
 
 
