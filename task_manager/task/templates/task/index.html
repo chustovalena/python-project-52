@@ -1,34 +1,76 @@
 {% extends "base.html" %}
+
 {% block content %}
-    <div class="container-fluid flex-grow-1">
-        <h1 class="my-4">Задачи</h1>
-        <a class="btn btn-primary mb-3" href="{% url 'tasks:create' %}">Создать задачу</a>
-        <table class="table table-striped">
-            <thead>
-                <tr class="fw-weight-bold">
-                    <th scope="col" >ID</th>
-                    <th scope="col">Имя</th>
-                    <th scope="col">Автор</th>
-                    <th scope="col">Исполнитель</th>
-                    <th scope="col">Дата создания</th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for task in tasks %}
-                <tr>
-                    <td>{{task.id}}</td>
-                    <td>{{task.name}}</td>
-                    <td>{{task.author}}</td>
-                    <td>{{task.executor}}</td>
-                    <td>{{task.created_at}}</td>
-                    <td>
-                        <a href="{% url 'tasks:update' task.id %}">Изменить</a><br>
-                        <a href="{% url 'tasks:delete' task.id %}">Удалить</a>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+<div class="container-fluid flex-grow-1">
+    <h1 class="my-4">Задачи</h1>
+
+    <a class="btn btn-primary mb-3" href="{% url 'tasks:create' %}">
+        Создать задачу
+    </a>
+
+    <div class="card mb-3">
+        <div class="card-body bg-light">
+            <form method="get">
+
+                <div class="mb-3">
+                    <label class="form-label" for="id_status">Статус</label>
+                    {{ filter.form.status }}
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label" for="id_executor">Исполнитель</label>
+                    {{ filter.form.executor }}
+                </div>
+
+                <!-- Метки -->
+                <div class="mb-3">
+                    <label class="form-label" for="id_labels">Метки</label>
+                    {{ filter.form.labels }}
+                </div>
+
+                <div class="form-check mb-3">
+                    {{ filter.form.self_tasks }}
+                    <label class="form-check-label" for="id_self_tasks">
+                        Только свои задачи
+                    </label>
+                </div>
+
+                <button class="btn btn-primary" type="submit">
+                    Показать
+                </button>
+
+            </form>
+        </div>
     </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr class="fw-weight-bold">
+                <th>ID</th>
+                <th>Имя</th>
+                <th>Автор</th>
+                <th>Исполнитель</th>
+                <th>Дата создания</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+        {% for task in filter.qs %}
+            <tr>
+                <td>{{ task.id }}</td>
+                <td>{{ task.name }}</td>
+                <td>{{ task.author }}</td>
+                <td>{{ task.executor }}</td>
+                <td>{{ task.created_at }}</td>
+                <td>
+                    <a href="{% url 'tasks:update' task.id %}">Изменить</a><br>
+                    <a href="{% url 'tasks:delete' task.id %}">Удалить</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
 {% endblock content %}
