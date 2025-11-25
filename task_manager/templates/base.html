@@ -26,6 +26,9 @@
           <li class="nav-item">
               <a class="nav-link" href="{% url 'tasks:index' %}">Задачи</a>
           </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'labels:index' %}">Метки</a>
+          </li>
           <form method="post" class="nav-item" action="{% url 'logout' %}">
               {% csrf_token %}
               <button type="submit" class="nav-link">Выйти</button>
