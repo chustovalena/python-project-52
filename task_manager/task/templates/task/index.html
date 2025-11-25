@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container-fluid flex-grow-1">
+        <h1 class="my-4">Задачи</h1>
+        <a class="btn btn-primary mb-3" href="{% url 'tasks:create' %}">Создать задачу</a>
+        <table class="table table-striped">
+            <thead>
+                <tr class="fw-weight-bold">
+                    <th scope="col" >ID</th>
+                    <th scope="col">Имя</th>
+                    <th scope="col">Автор</th>
+                    <th scope="col">Исполнитель</th>
+                    <th scope="col">Дата создания</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in tasks %}
+                <tr>
+                    <td>{{task.id}}</td>
+                    <td>{{task.name}}</td>
+                    <td>{{task.author}}</td>
+                    <td>{{task.executor}}</td>
+                    <td>{{task.created_at}}</td>
+                    <td>
+                        <a href="{% url 'tasks:update' task.id %}">Изменить</a><br>
+                        <a href="{% url 'tasks:delete' task.id %}">Удалить</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}
