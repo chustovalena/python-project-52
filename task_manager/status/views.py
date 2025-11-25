@@ -8,7 +8,7 @@ from django.contrib import messages
 
 
 # Create your views here.
-class StatusIndexView(ListView):
+class StatusIndexView(LoginRequiredMixin, ListView):
     model = Status
     ordering = ['id']
     template_name = 'status/index.html'
