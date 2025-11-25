@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container-fluid flex-grow-1">
+        <h1 class="my-4">Статусы</h1>
+        <a class="btn btn-primary mb-3" href="{% url 'labels:create' %}">Создать статус</a>
+        <table class="table table-striped">
+            <thead>
+                <tr class="fw-weight-bold">
+                    <th scope="col" >ID</th>
+                    <th scope="col">Имя</th>
+                    <th scope="col">Дата создания</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for label in labels %}
+                <tr>
+                    <td>{{label.id}}</td>
+                    <td>{{label.name}}</td>
+                    <td>{{label.created_at}}</td>
+                    <td>
+                        <a href="{% url 'labels:update' label.id %}">Изменить</a><br>
+                        <a href="{% url 'labels:delete' label.id %}">Удалить</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}
