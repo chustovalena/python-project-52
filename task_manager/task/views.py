@@ -1,18 +1,20 @@
 from django.shortcuts import render
 from django.contrib import messages
-from django.views.generic import ListView, CreateView, DeleteView, DetailView, UpdateView
+from django.views.generic import CreateView, DeleteView, DetailView, UpdateView
 from .models import Task
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from .forms import TaskForm
 from django.urls import reverse_lazy
+from django_filters.views import FilterView
+from .filters import TaskFilter
 
-
-class TaskIndexView(ListView):
+class TaskIndexView(LoginRequiredMixin, FilterView):
     model = Task
     template_name = 'task/index.html'
     ordering = ['id']
     context_object_name = 'tasks'
     paginate_by = 15
+    filterset_class = TaskFilter
 
 
 class TaskCreateView(LoginRequiredMixin, CreateView):
