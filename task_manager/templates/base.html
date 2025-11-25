@@ -19,19 +19,25 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'users:index' %}">Пользователи</a>
           </li>
+          {% if user.is_authenticated %}
           <li class="nav-item">
               <a class="nav-link" href="{% url 'statuses:index' %}">Статусы</a>
           </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'tasks:index' %}">Задачи</a>
+          </li>
+          <form method="post" class="nav-item" action="{% url 'logout' %}">
+              {% csrf_token %}
+              <button type="submit" class="nav-link">Выйти</button>
+          </form>
+          {% else %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'login' %}">Вход</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/users/create/">Регистрация</a>
           </li>
-          <form method="post" class="nav-item" action="{% url 'logout' %}">
-              {% csrf_token %}
-              <button type="submit" class="nav-link">Выйти</button>
-          </form>
+          {% endif %}
         </ul>
       </div>
     </nav>
