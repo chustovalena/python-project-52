@@ -3,6 +3,7 @@ from django.views.generic import TemplateView
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import reverse_lazy
 from django.contrib import messages
+from .forms import MyAuthenticationForm
 
 
 class HomePageView(TemplateView):
@@ -12,6 +13,7 @@ class HomePageView(TemplateView):
 class CustomLoginView(LoginView):
     redirect_authenticated_user = True
     template_name = "registration/login.html"
+    form_class = MyAuthenticationForm
 
     def form_valid(self, form):
         messages.success(self.request, "Вы успешно вошли в аккаунт!")
