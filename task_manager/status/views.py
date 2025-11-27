@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from .models import Status
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin

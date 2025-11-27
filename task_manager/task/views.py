@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.contrib import messages
 from django.views.generic import CreateView, DeleteView, DetailView, UpdateView
 from .models import Task

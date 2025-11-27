@@ -13,7 +13,7 @@ class Task(models.Model):
     author = models.ForeignKey(User, on_delete=models.PROTECT, related_name='created_tasks')
     executor = models.ForeignKey(User, on_delete=models.PROTECT, related_name='tasks', null=True, blank=True, verbose_name='Исполнитель')
     created_at = models.DateTimeField(auto_now_add=True)
-    labels = models.ManyToManyField(Label, related_name='tasks')
+    labels = models.ManyToManyField(Label, related_name='tasks', null=True)
 
     def __str__(self):
         return self.name
