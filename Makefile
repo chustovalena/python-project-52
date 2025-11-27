@@ -15,3 +15,6 @@ collectstatic:
 
 dev:
 	uv run manage.py runserver
+
+lint:
+	ruff check
