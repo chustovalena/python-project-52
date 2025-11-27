@@ -1,4 +1,4 @@
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib import messages
@@ -7,6 +7,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import CustomUserCreationForm
 
 
+User = get_user_model()
 # Create your views here.
 class UserIndexView(ListView):
     model = User
