@@ -4,6 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from .forms import CustomStatusCreationForm
 from django.contrib import messages
+from django.shortcuts import redirect
 
 
 # Create your views here.
@@ -13,7 +14,6 @@ class StatusIndexView(LoginRequiredMixin, ListView):
     template_name = 'status/index.html'
     context_object_name = 'statuses'
     paginate_by = 15
-
 
 class StatusCreateView(LoginRequiredMixin, CreateView):
     model = Status
@@ -43,5 +43,10 @@ class StatusDeleteView(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('statuses:index')
 
     def form_valid(self, form):
-        messages.success(self.request, 'Статус успешно удален')
+        status = self.get_object()
+
+        if status.task_set.exists():
+            messages.error(self.request, "Нельзя удалить статус, который используется задачами.")
+            return redirect(self.success_url)
+
         return super().form_valid(form)
