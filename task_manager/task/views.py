@@ -1,11 +1,12 @@
 from django.contrib import messages
 from django.views.generic import CreateView, DeleteView, DetailView, UpdateView
 from .models import Task
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import TaskForm
 from django.urls import reverse_lazy
 from django_filters.views import FilterView
 from .filters import TaskFilter
+from django.shortcuts import redirect
 
 class TaskIndexView(LoginRequiredMixin, FilterView):
     model = Task
@@ -25,7 +26,7 @@ class TaskCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         response = super().form_valid(form)
-        messages.success(self.request, 'Задача создана')
+        messages.success(self.request, 'Задача успешно создана')
         return response
 
 
@@ -35,15 +36,27 @@ class TaskUpdateView(LoginRequiredMixin, UpdateView):
     template_name = 'task/update.html'
     success_url = reverse_lazy('tasks:index')
 
+    def form_valid(self, form):
+        messages.success(self.request, 'Задача успешно изменена')
+        return super().form_valid(form)
 
-class TaskDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+
+class TaskDeleteView(LoginRequiredMixin, DeleteView):
     model = Task
     template_name = 'task/delete.html'
     success_url = reverse_lazy('tasks:index')
+    
+    def form_valid(self, form):
+        messages.success(self.request, 'Задача успешно удалена')
+        return super().form_valid(form)
 
-    def test_func(self):
-        obj = self.get_object()
-        return obj.author == self.request.user
+    def dispatch(self, request, *args, **kwargs):
+        task = self.get_object()
+
+        if task.author != request.user:
+            messages.error(request, 'Задачу может удалить только ее автор')
+            return redirect(self.success_url)
+        return super().dispatch(request, *args, **kwargs)
 
 
 class TaskDetailView(LoginRequiredMixin, DetailView):
