@@ -22,7 +22,7 @@ class LabelCreateView(LoginRequiredMixin, CreateView):
     template_name = 'label/create.html'
 
     def form_valid(self, form):
-        messages.success(self.request, 'Статус успешно создан')
+        messages.success(self.request, 'Метка успешно создана')
         return super().form_valid(form)
 
 
@@ -33,7 +33,7 @@ class LabelUpdateView(LoginRequiredMixin, UpdateView):
     template_name = 'label/update.html'
 
     def form_valid(self, form):
-        messages.success(self.request, 'Статус успешно изменен')
+        messages.success(self.request, 'Метка успешно изменена')
         return super().form_valid(form)
 
 
