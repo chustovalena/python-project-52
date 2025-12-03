@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from django.contrib import messages
 from django.shortcuts import redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, CustomUserUpdateForm
 
 
 User = get_user_model()
@@ -30,7 +30,7 @@ class UserCreateView(CreateView):
 
 class UserUpdateView(LoginRequiredMixin, UpdateView):
     model = User
-    form_class = CustomUserCreationForm
+    form_class = CustomUserUpdateForm
     template_name = 'user/update.html'
     success_url = reverse_lazy('users:index')
 
@@ -57,7 +57,7 @@ class UserDeleteView(LoginRequiredMixin, DeleteView):
     def dispatch(self, request, *args, **kwargs):
         if request.user.pk != kwargs['pk']:
             messages.error(request, "У вас нет прав для изменения другого пользователя.")
-            return redirect('users:list')
+            return redirect('users:index')
         return super().dispatch(request, *args, **kwargs)
     
 
