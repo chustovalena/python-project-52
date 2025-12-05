@@ -67,7 +67,7 @@ def test_user_update_form_valid(user_factory):
     assert form.is_valid()
 
 
-def test_user_update_form_valid(user_factory):
+def test_user_update_form_invalid(user_factory):
     user1 = user_factory(username='first')
     user_factory(username='second')
 

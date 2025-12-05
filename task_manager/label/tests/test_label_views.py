@@ -15,8 +15,8 @@ def test_status_index_requires_login(client):
 
 @pytest.mark.django_db
 def test_status_index_success(client_logged_in, label_factory):
-    label1 = label_factory()
-    label2 = label_factory(name='yeah')
+    label_factory()
+    label_factory(name='yeah')
     url = reverse('labels:index')
 
     response = client_logged_in.get(url)

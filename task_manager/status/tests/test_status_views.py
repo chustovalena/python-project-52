@@ -1,7 +1,6 @@
 from django.urls import reverse
 import pytest
 from task_manager.status.models import Status
-from task_manager.task.models import Task
 
 
 @pytest.mark.django_db
@@ -16,8 +15,8 @@ def test_status_index_requires_login(client):
 
 @pytest.mark.django_db
 def test_status_index_success(client_logged_in, status_factory):
-    status1 = status_factory()
-    status2 = status_factory(name='yeah')
+    status_factory()
+    status_factory(name='yeah')
     url = reverse('statuses:index')
 
     response = client_logged_in.get(url)

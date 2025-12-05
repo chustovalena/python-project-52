@@ -1,4 +1,3 @@
-import pytest
 from django.test import RequestFactory
 from task_manager.task.filters import TaskFilter
 from task_manager.task.models import Task
@@ -60,7 +59,7 @@ def test_task_filter_executor(status_factory, user_factory, task_factory):
     user2 = user_factory(username='user2')
     status2 = status_factory(name='second')
 
-    task1 = task_factory(name='task1', status=status1, author=user1, executor=user2)
+    task_factory(name='task1', status=status1, author=user1, executor=user2)
     task2 = task_factory(name='task2', status=status2, author=user2, executor=user1)
 
     data = {'executor': user1.id}
@@ -78,7 +77,7 @@ def test_task_filter_labels(status_factory, label_factory, user_factory, task_fa
     label1 = label_factory(name='l1')
     label2 = label_factory(name='l2')
 
-    task1 = task_factory(name='task1', status=status1, author=user1, labels=[label1])
+    task_factory(name='task1', status=status1, author=user1, labels=[label1])
     task2 = task_factory(name='task2', labels=[label2])
 
     data = {'labels': [label2]}
