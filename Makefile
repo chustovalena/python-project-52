@@ -18,3 +18,7 @@ dev:
 
 lint:
 	ruff check
+
+sonar:
+	pytest --cov=. --cov-report=xml
+	pysonar --sonar-token=$(SONAR_TOKEN)
