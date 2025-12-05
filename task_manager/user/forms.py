@@ -19,7 +19,7 @@ class CustomUserCreationForm(UserCreationForm):
             'placeholder': 'Пароль',
             'class': 'form-control'
         }),
-        help_text='· Ваш пароль должен содержать как минимум 3 символа.'
+        help_text='· Ваш пароль должен содержать как минимум 8 символа.'
     )
 
     password2 = forms.CharField(
@@ -100,8 +100,9 @@ class CustomUserUpdateForm(forms.ModelForm):
 
     def clean_username(self):
         username = self.cleaned_data['username']
-        qs = User.objects.filter(username='username').exclude(pk=self.instance.pk)
+        qs = User.objects.filter(username=username).exclude(pk=self.instance.pk)
 
         if qs.exists():
             raise forms.ValidationError("Пользователь с таким username уже существует.")
         return username
+    
