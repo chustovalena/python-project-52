@@ -5,6 +5,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from .forms import LabelForm
 from django.contrib import messages
+from django.utils.translation import gettext as _
+
 
 
 class LabelIndexView(LoginRequiredMixin, ListView):
@@ -22,7 +24,7 @@ class LabelCreateView(LoginRequiredMixin, CreateView):
     template_name = 'label/create.html'
 
     def form_valid(self, form):
-        messages.success(self.request, 'Метка успешно создана')
+        messages.success(self.request, _('The label was created successfully'))
         return super().form_valid(form)
 
 
@@ -33,7 +35,7 @@ class LabelUpdateView(LoginRequiredMixin, UpdateView):
     template_name = 'label/update.html'
 
     def form_valid(self, form):
-        messages.success(self.request, 'Метка успешно изменена')
+        messages.success(self.request, _('The label was updated successfully'))
         return super().form_valid(form)
 
 
@@ -45,9 +47,9 @@ class LabelDeleteView(LoginRequiredMixin, DeleteView):
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
         if self.object.tasks.exists():
-            messages.error(request, 'Невозможно удалить метку так как она используется в задачах.')
+            messages.error(request, _('It is not possible to delete a label because it is used in tasks.'))
             return redirect(self.success_url)
-        messages.success(request, 'Метка успешно удалена.')
+        messages.success(request,  _('The label was deleted successfully'))
         return super().post(request, *args, **kwargs)
 
 
