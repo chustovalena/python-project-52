@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.shortcuts import redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import CustomUserCreationForm, CustomUserUpdateForm
+from django.utils.translation import gettext as _
 
 
 User = get_user_model()
@@ -24,7 +25,7 @@ class UserCreateView(CreateView):
     success_url = reverse_lazy("users:index")
     
     def form_valid(self, form):
-        messages.success(self.request, 'Пользователь успешно зарегистрирован')
+        messages.success(self.request, _('The user has been successfully registered'))
         return super().form_valid(form)
 
 
@@ -35,12 +36,12 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
     success_url = reverse_lazy('users:index')
 
     def form_valid(self, form):
-        messages.success(self.request, 'Пользователь успешно изменен')
+        messages.success(self.request, _('The user was updated successfully'))
         return super().form_valid(form)
 
     def dispatch(self, request, *args, **kwargs):
         if request.user.pk != kwargs['pk']:
-            messages.error(request, "У вас нет прав для изменения другого пользователя.")
+            messages.error(request, _("You don't have the rights to change another user."))
             return redirect('users:index')
         return super().dispatch(request, *args, **kwargs)
 
@@ -51,12 +52,12 @@ class UserDeleteView(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('users:index')
 
     def form_valid(self, form):
-        messages.success(self.request, 'Пользователь успешно удален')
+        messages.success(self.request, _('The user was deleted successfully'))
         return super().form_valid(form)
 
     def dispatch(self, request, *args, **kwargs):
         if request.user.pk != kwargs['pk']:
-            messages.error(request, "У вас нет прав для изменения другого пользователя.")
+            messages.error(request, _("You don't have the rights to delete another user."))
             return redirect('users:index')
         return super().dispatch(request, *args, **kwargs)
     

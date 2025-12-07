@@ -1,47 +1,48 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
+from django.utils.translation import gettext_lazy as _
 
 
 class CustomUserCreationForm(UserCreationForm):
     username = forms.CharField(
-        label='Имя Пользователя',
+        label=_('Username'),
         widget=forms.TextInput(attrs={
-            'placeholder': 'Введите имя пользователя',
+            'placeholder': _('Enter the username'),
             'class': 'form-control',
         }),
-        help_text='Обязательное поле. Только буквы, цифры и символы @/./+/-/_.'
+        help_text=_('Required field. Only letters, numbers, and symbols @/./+/-/_.')
     )
 
     password1 = forms.CharField(
-        label='Пароль',
+        label='Password',
         widget=forms.PasswordInput(attrs={
-            'placeholder': 'Пароль',
+            'placeholder': 'Password',
             'class': 'form-control'
         }),
-        help_text='· Ваш пароль должен содержать как минимум 8 символа.'
+        help_text=_('· Your password must contain at least 8 characters.')
     )
 
     password2 = forms.CharField(
-        label='Подтверждение Пароля',
+        label='Password confirmation',
         widget=forms.PasswordInput(attrs={
-            'placeholder': 'Пароль',
+            'placeholder': 'Password',
             'class': 'form-control'
         }),
-        help_text='Для подтверждения введите, пожалуйста, пароль ещё раз.'
+        help_text=_('Please enter the password again to confirm.')
     )
 
     first_name = forms.CharField(
-        label='Имя',
+        label=_('First name'),
         widget=forms.TextInput(attrs={
-            'placeholder': 'Имя',
+            'placeholder': _('First name'),
             'class': 'form-control'
         })
     )
     last_name = forms.CharField(
-        label='Фамилия',
+        label=_('Last name'),
         widget=forms.TextInput(attrs={
-            'placeholder': 'Фамилия',
+            'placeholder': _('Last name'),
             'class': 'form-control'
         })
     )
@@ -54,43 +55,43 @@ class CustomUserCreationForm(UserCreationForm):
 
 class CustomUserUpdateForm(forms.ModelForm):
     username = forms.CharField(
-        label='Имя Пользователя',
+        label=_('Username'),
         widget=forms.TextInput(attrs={
-            'placeholder': 'Введите имя пользователя',
+            'placeholder': _('Enter the username'),
             'class': 'form-control',
         }),
-        help_text='Обязательное поле. Только буквы, цифры и символы @/./+/-/_.'
+        help_text=_('Required field. Only letters, numbers, and symbols @/./+/-/_.')
     )
 
     password1 = forms.CharField(
-        label='Пароль',
+        label=_('Password'),
         widget=forms.PasswordInput(attrs={
-            'placeholder': 'Пароль',
+            'placeholder': _('Password'),
             'class': 'form-control'
         }),
-        help_text='· Ваш пароль должен содержать как минимум 3 символа.'
+        help_text=_('· Your password must contain at least 8 characters.')
     )
 
     password2 = forms.CharField(
-        label='Подтверждение Пароля',
+        label=_('Password confirmation'),
         widget=forms.PasswordInput(attrs={
-            'placeholder': 'Пароль',
+            'placeholder': _('Password'),
             'class': 'form-control'
         }),
-        help_text='Для подтверждения введите, пожалуйста, пароль ещё раз.'
+        help_text=_('Please enter the password again to confirm.')
     )
 
     first_name = forms.CharField(
-        label='Имя',
+        label=_('First name'),
         widget=forms.TextInput(attrs={
-            'placeholder': 'Имя',
+            'placeholder': _('First name'),
             'class': 'form-control'
         })
     )
     last_name = forms.CharField(
-        label='Фамилия',
+        label=_('Last name'),
         widget=forms.TextInput(attrs={
-            'placeholder': 'Фамилия',
+            'placeholder': _('Last name'),
             'class': 'form-control'
         })
     )
@@ -103,6 +104,6 @@ class CustomUserUpdateForm(forms.ModelForm):
         qs = User.objects.filter(username=username).exclude(pk=self.instance.pk)
 
         if qs.exists():
-            raise forms.ValidationError("Пользователь с таким username уже существует.")
+            raise forms.ValidationError(_("A user with that username already exists."))
         return username
     
