@@ -22,3 +22,9 @@ lint:
 sonar:
 	pytest --cov=. --cov-report=xml
 	pysonar --sonar-token=$(SONAR_TOKEN)
+
+makemessages:
+	uv run manage.py makemessages -l ru
+
+compilemessages:
+	uv run manage.py compilemessages --ignore=.venv
