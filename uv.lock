@@ -259,6 +259,7 @@ dependencies = [
     { name = "pytest-cov" },
     { name = "pytest-django" },
     { name = "python-dotenv" },
+    { name = "rollbar" },
     { name = "ruff" },
     { name = "uvicorn" },
     { name = "whitenoise", extra = ["brotli"] },
@@ -278,6 +279,7 @@ requires-dist = [
     { name = "pytest-cov", specifier = ">=7.0.0" },
     { name = "pytest-django", specifier = ">=4.11.1" },
     { name = "python-dotenv", specifier = ">=1.2.1" },
+    { name = "rollbar", specifier = ">=1.3.0" },
     { name = "ruff", specifier = ">=0.14.6" },
     { name = "uvicorn", specifier = ">=0.38.0" },
     { name = "whitenoise", extras = ["brotli"], specifier = ">=6.11.0" },
@@ -573,6 +575,18 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/0e/95/89c054ad70bfef6da605338b009b2e283485835351a9935c7bfbfaca7ffc/responses-0.25.8.tar.gz", hash = "sha256:9374d047a575c8f781b94454db5cab590b6029505f488d12899ddb10a4af1cf4", size = 79320 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/1c/4c/cc276ce57e572c102d9542d383b2cfd551276581dc60004cb94fe8774c11/responses-0.25.8-py3-none-any.whl", hash = "sha256:0c710af92def29c8352ceadff0c3fe340ace27cf5af1bbe46fb71275bcd2831c", size = 34769 },
+]
+
+[[package]]
+name = "rollbar"
+version = "1.3.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "requests" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/d2/43/966a7d64ff2c0901451aa2fcbe205a68528b6c6fbac6760b5ad5a705a944/rollbar-1.3.0.tar.gz", hash = "sha256:519402eac39bcc4fa484821872f6bb18497fb7b6c81167047867d17714d3b379", size = 85300 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c3/d2/b6bf3f24349bc3bc681522fa8c55271923614b47e5e9d923f443523de81a/rollbar-1.3.0-py3-none-any.whl", hash = "sha256:d800c4265a4d5aae547cb3f29e48414b6d4fedaa7f679cd0fd64dac16a1eded3", size = 117183 },
 ]
 
 [[package]]

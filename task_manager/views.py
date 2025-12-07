@@ -2,6 +2,13 @@ from django.views.generic import TemplateView
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib import messages
 from .forms import MyAuthenticationForm
+from django.http import HttpResponse
+
+
+def rollbar_test(request):
+    a = None
+    a.hello()  # намеренная ошибка
+    return HttpResponse("Rollbar test")
 
 
 class HomePageView(TemplateView):

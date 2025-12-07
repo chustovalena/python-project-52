@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from .views import HomePageView, CustomLoginView, CustomLogoutView
+from .views import HomePageView, CustomLoginView, CustomLogoutView, rollbar_test
 
 urlpatterns = [
     path('', HomePageView.as_view(), name='home'),
@@ -11,5 +11,6 @@ urlpatterns = [
     path('tasks/', include(('task_manager.task.urls', 'tasks'), namespace='tasks')),
     path('labels/', include(('task_manager.label.urls', 'labels'), namespace='labels')),
     path('admin/', admin.site.urls),
+    path('rollbar-test/', rollbar_test),
 ]
 
