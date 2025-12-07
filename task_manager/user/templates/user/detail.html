@@ -1,35 +1,36 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block content %}
 <div class="container wrapper flex-grow-1">
-    <h1 class="my-4">Мой профиль</h1>  
+    <h1 class="my-4">{% translate 'Profile' %}</h1>  
     <div class="card">
         <div class="card-header bg-secondary text-white">
-            <h2>пользователь</h2>
+            <h2>{% translate 'user' %}</h2>
         </div>
         <div class="card-body bg-light">
             <div class="container">
                 <div class="row p-1">
-                    <div class="col">Ник</div>
+                    <div class="col">{% translate 'Username' %}</div>
                     <div class="col">{{ user.username }}</div>
                 </div>
                 <div class="row p-1">
-                    <div class="col">Имя</div>
+                    <div class="col">{% translate 'Name' %}</div>
                     <div class="col">{{ user.first_name }}</div>
                 </div>
                 <div class="row p-1">
-                    <div class="col">Фамилия</div>
+                    <div class="col">{% translate 'Surname' %}</div>
                     <div class="col">{{ user.last_name }}</div>
                 </div>
                 <div class="row p-1">
-                    <div class="col">Дата создания</div>
+                    <div class="col">{% translate 'Creation date' %}</div>
                     <div class="col">{{ user.date_joined }}</div>
                 </div>
                 <div class="row p-1">
                     <div class="col">
-                        <a href="{% url 'users:update' user.pk %}">Изменить</a>
+                        <a href="{% url 'users:update' user.pk %}">{% translate 'Edit' %}</a>
                         <br>
-                        <a href="{% url 'users:delete' user.pk %}">Удалить</a>
+                        <a href="{% url 'users:delete' user.pk %}">{% translate 'Delete' %}</a>
                     </div>
                 </div>
             </div>

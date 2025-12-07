@@ -1,14 +1,15 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block content %}
 <div class="container mt-4">
-    <h1>Удалить пользователя</h1>
-    <p>Вы уверены, что хотите удалить пользователя: <b>{{ object.username }}</b>?</p>
+    <h1>{% translate 'Delete the user' %}</h1>
+    <p>{% translate 'Are you sure you want to delete the user' %}: <b>{{ object.username }}</b>?</p>
 
     <form method="post">
         {% csrf_token %}
-        <button class="btn btn-danger" type="submit">Да, удалить</button>
-        <a class="btn btn-secondary" href="{% url 'users:index' %}">Отмена</a>
+        <button class="btn btn-danger" type="submit">{% translate 'Yes, delete the user' %}</button>
+        <a class="btn btn-secondary" href="{% url 'users:index' %}">{% translate 'Cancel' %}</a>
     </form>
 </div>
 {% endblock %}
