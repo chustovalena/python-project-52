@@ -1,20 +1,21 @@
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm
+from django.utils.translation import gettext_lazy as _
 
 
 class MyAuthenticationForm(AuthenticationForm):
     username = forms.CharField(
-        label='Имя Пользователя',
+        label=_('Username'),
         widget=forms.TextInput(attrs={
-            'placeholder': 'Имя Пользователя',
+            'placeholder': _('Username'),
             'class': 'form-control'
         })
     )
 
     password = forms.CharField(
-        label='Пароль',
+        label=_('Password'),
         widget=forms.PasswordInput(attrs={
-            'placeholder': 'Пароль',
+            'placeholder': _('Password'),
             'class': 'form-control'
         })
     )
