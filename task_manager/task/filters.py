@@ -1,12 +1,13 @@
 import django_filters
 from django import forms
 from .models import Task
+from django.utils.translation import gettext_lazy as _
 
 
 class TaskFilter(django_filters.FilterSet):
 
     self_tasks = django_filters.BooleanFilter(
-        label='Только свои задачи',
+        label=_('Only my tasks'),
         method='filter_self_tasks',
         widget=forms.CheckboxInput(attrs={'class': 'form-check-input'})
     )

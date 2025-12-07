@@ -1,19 +1,21 @@
 from .models import Task
 from django import forms
+from django.utils.translation import gettext_lazy as _
+
 
 class TaskForm(forms.ModelForm):
     name = forms.CharField(
-        label='Имя',
+        label=_('Name'),
         widget=forms.TextInput(attrs={
-            'placeholder': 'Имя',
+            'placeholder': _('Name'),
             'class': 'form-control'
         })
     )
 
     description = forms.CharField(
-        label='Описание',
+        label=_('Description'),
         widget=forms.Textarea(attrs={
-            'placeholder': 'Описание',
+            'placeholder': _('Description'),
             'class': 'form-control',
         })
     )
