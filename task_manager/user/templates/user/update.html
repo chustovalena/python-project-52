@@ -1,8 +1,9 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block content %}
 <div class="container mt-4">
-  <h1>Изменение пользователя</h1>
+  <h1>{% translate 'Edit the user' %}</h1>
   <form method="post">
     {% csrf_token %}
 
@@ -27,7 +28,7 @@
       </div>
     {% endfor %}
 
-    <button type="submit" class="btn btn-primary">Изменить</button>
+    <button type="submit" class="btn btn-primary">{% translate 'Edit' %}</button>
   </form>
 </div>
 {% endblock %}
