@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("SECRET_KEY")
-DEBUG = os.getenv("DEBUG", False)
+DEBUG = os.getenv("DEBUG") == "True"
 
 
 ALLOWED_HOSTS = [
@@ -156,3 +156,6 @@ ROLLBAR = {
     'code_version': '1.0',
     'root': BASE_DIR,
 }
+
+import rollbar
+rollbar.init(**ROLLBAR)
