@@ -1,5 +1,6 @@
 from .models import Status
 from django import forms
+from django.utils.translation import gettext_lazy as _
 
 
 class CustomStatusCreationForm(forms.ModelForm):
@@ -8,10 +9,10 @@ class CustomStatusCreationForm(forms.ModelForm):
         fields = ['name']
         widgets = {
             'name': forms.TextInput(attrs={
-                'placeholder': 'Имя',
+                'placeholder': _('Name'),
                 'class': 'form-control',
             }),
         }
         labels = {
-            'name': 'Имя',
+            'name': _('Name'),
         }

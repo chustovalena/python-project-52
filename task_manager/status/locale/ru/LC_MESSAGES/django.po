@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-12-07 18:10+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: task_manager/status/forms.py:12 task_manager/status/forms.py:17
+#: task_manager/status/templates/status/index.html:12
+msgid "Name"
+msgstr ""
+
+#: task_manager/status/templates/status/create.html:6
+#: task_manager/status/templates/status/index.html:7
+msgid "Create a status"
+msgstr "Создать статус"
+
+#: task_manager/status/templates/status/create.html:19
+msgid "Create"
+msgstr "Создать"
+
+#: task_manager/status/templates/status/delete.html:6
+msgid "Delete the status"
+msgstr "Удалить статус"
+
+#: task_manager/status/templates/status/delete.html:7
+msgid "Are you sure you want to delete the status"
+msgstr "Вы уверены, что хотите удалить этот статус"
+
+#: task_manager/status/templates/status/delete.html:11
+msgid "Yes, delete the status"
+msgstr "Да, удалить этот статус"
+
+#: task_manager/status/templates/status/index.html:6
+msgid "Statuses"
+msgstr "Статусы"
+
+#: task_manager/status/templates/status/index.html:13
+msgid "Creation date"
+msgstr "Дата создания"
+
+#: task_manager/status/templates/status/index.html:24
+#: task_manager/status/templates/status/update.html:19
+msgid "Edit"
+msgstr "Изменить"
+
+#: task_manager/status/templates/status/index.html:25
+msgid "Delete"
+msgstr "Удалить"
+
+#: task_manager/status/templates/status/update.html:6
+msgid "Edit the status"
+msgstr "Изменить статус"
+
+#: task_manager/status/views.py:26
+msgid "The status was created successfully"
+msgstr "Статус был успешно создан"
+
+#: task_manager/status/views.py:37
+msgid "The status was updated successfully"
+msgstr "Статус был успешно изменен"
+
+#: task_manager/status/views.py:50
+msgid "The status that is used by tasks cannot be deleted."
+msgstr "Статус, использующийся в задачах нельзя удалить"
+
+#: task_manager/status/views.py:52
+msgid "The status was deleted successfully"
+msgstr "Статус был успешно удален"

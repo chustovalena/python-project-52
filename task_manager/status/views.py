@@ -5,6 +5,7 @@ from django.urls import reverse_lazy
 from .forms import CustomStatusCreationForm
 from django.contrib import messages
 from django.shortcuts import redirect
+from django.utils.translation import gettext as _
 
 
 # Create your views here.
@@ -22,7 +23,7 @@ class StatusCreateView(LoginRequiredMixin, CreateView):
     success_url = reverse_lazy("statuses:index")
 
     def form_valid(self, form):
-        messages.success(self.request, 'Статус успешно добавлен')
+        messages.success(self.request, _('The status was created successfully'))
         return super().form_valid(form)
 
 
@@ -33,7 +34,7 @@ class StatusUpdateView(LoginRequiredMixin, UpdateView):
     success_url = reverse_lazy('statuses:index')
 
     def form_valid(self, form):
-        messages.success(self.request, 'Статус успешно изменен')
+        messages.success(self.request, _('The status was updated successfully'))
         return super().form_valid(form)
 
 
@@ -46,7 +47,7 @@ class StatusDeleteView(LoginRequiredMixin, DeleteView):
         status = self.get_object()
 
         if status.task_set.exists():
-            messages.error(self.request, "Нельзя удалить статус, который используется задачами.")
+            messages.error(self.request, _("The status that is used by tasks cannot be deleted."))
             return redirect(self.success_url)
-
+        messages.success(self.request, _('The status was deleted successfully'))
         return super().form_valid(form)
