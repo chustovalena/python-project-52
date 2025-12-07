@@ -25,7 +25,7 @@ def test_login_post_view(client, user_factory):
     
     msgs = list(get_messages(response.wsgi_request))
     assert len(msgs) == 1
-    assert str(msgs[0]) == 'Вы успешно вошли в аккаунт!'
+    assert str(msgs[0]) == "You have successfully logged into your account!"
 
 
 @pytest.mark.django_db
@@ -53,4 +53,4 @@ def test_logout(client_logged_in):
 
     msgs = list(get_messages(response.wsgi_request))
     assert len(msgs) == 1
-    assert str(msgs[0]) == 'Вы успешно вышли из аккаунта'
+    assert str(msgs[0]) == "You have successfully logged out of your account"

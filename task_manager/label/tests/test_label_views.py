@@ -49,7 +49,7 @@ def test_status_create_succes(client_logged_in):
     status = Label.objects.first()
 
     assert status.name == 'My label'
-    assert 'Метка успешно создана' in response.content.decode()
+    assert 'The label was created successfully' in response.content.decode()
 
 
 @pytest.mark.django_db
@@ -76,7 +76,7 @@ def test_status_update_success(client_logged_in, label_factory):
     assert response.status_code == 200
     assert Label.objects.count() == 1
     assert label.name == 'hey candy'
-    assert 'Метка успешно изменена' in response.content.decode()
+    assert 'The label was updated successfully' in response.content.decode()
 
 
 @pytest.mark.django_db
@@ -100,7 +100,7 @@ def test_status_delete_fk(client_logged_in, task_factory, label_factory):
     response = client_logged_in.post(url, follow=True)
     label.refresh_from_db()
 
-    assert 'Невозможно удалить метку так как она используется в задачах.' in response.content.decode()
+    assert 'It is not possible to delete a label because it is used in tasks.' in response.content.decode()
     assert Label.objects.count() == 1
 
 
@@ -113,3 +113,4 @@ def test_status_delete_succes(client_logged_in, label_factory):
 
     assert response.status_code == 200
     assert Label.objects.count() == 0
+    assert 'The label was deleted successfully' in response.content.decode()

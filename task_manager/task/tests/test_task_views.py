@@ -61,7 +61,7 @@ def test_task_create_logged(client_logged_in, status_factory, label_factory):
     assert task.status == status
     assert label in task.labels.all()
     assert task.executor is None
-    assert 'Задача успешно создана' in response.content.decode()
+    assert 'The task was created successfully' in response.content.decode()
 
 
 @pytest.mark.django_db
@@ -90,7 +90,7 @@ def test_task_update_view(client_logged_in, task_factory, label_factory):
     task.refresh_from_db()
     assert response.status_code == 200
     assert task.name == 'New Task'
-    assert 'Задача успешно изменена' in response.content.decode()
+    assert 'The task was updated successfully' in response.content.decode()
 
 
 @pytest.mark.django_db
@@ -112,7 +112,7 @@ def test_task_delete_not_author(client_logged_in, task_factory, user_factory):
     response = client_logged_in.post(url, follow=True)
 
     assert Task.objects.count() == 1
-    assert 'Задачу может удалить только ее автор' in response.content.decode()
+    assert 'The task can only be deleted by its author.' in response.content.decode()
 
 
 @pytest.mark.django_db
@@ -124,7 +124,7 @@ def test_task_delete_author(client_logged_in, task_factory):
     response = client_logged_in.post(url, follow=True)
 
     assert Task.objects.count() == 0
-    assert 'Задача успешно удалена' in response.content.decode()
+    assert 'The task was deleted successfully' in response.content.decode()
 
 
 @pytest.mark.django_db

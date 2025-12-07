@@ -49,7 +49,7 @@ def test_status_create_succes(client_logged_in):
     status = Status.objects.first()
 
     assert status.name == 'My status'
-    assert 'Статус успешно добавлен' in response.content.decode()
+    assert 'The status was created successfully' in response.content.decode()
 
 
 @pytest.mark.django_db
@@ -76,7 +76,7 @@ def test_status_update_success(client_logged_in, status_factory):
     assert response.status_code == 200
     assert Status.objects.count() == 1
     assert status.name == 'hey candy'
-    assert 'Статус успешно изменен' in response.content.decode()
+    assert 'The status was updated successfully' in response.content.decode()
 
 
 @pytest.mark.django_db
@@ -98,7 +98,7 @@ def test_status_delete_fk(client_logged_in, task_factory, status_factory):
     response = client_logged_in.post(url, follow=True)
     status.refresh_from_db()
 
-    assert "Нельзя удалить статус, который используется задачами." in response.content.decode()
+    assert "The status that is used by tasks cannot be deleted." in response.content.decode()
     assert Status.objects.count() == 1
 
 
@@ -111,3 +111,4 @@ def test_status_delete_succes(client_logged_in, status_factory):
 
     assert response.status_code == 200
     assert Status.objects.count() == 0
+    assert 'The status was deleted successfully' in response.content.decode()
