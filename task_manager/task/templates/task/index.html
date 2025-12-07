@@ -1,15 +1,16 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block content %}
 <div class="container-fluid flex-grow-1">
-    <h1 class="my-4">Задачи</h1>
+    <h1 class="my-4">{% translate 'Tasks' %}</h1>
 
     <a class="btn btn-primary mb-3" href="{% url 'tasks:create' %}">
-        Создать задачу
+        {% translate 'Create a task' %}
     </a>
 
     <button class="btn btn-secondary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse">
-        Фильтр
+        {% translate 'Filter' %}
     </button>
 
     <div class="collapse" id="filterCollapse">
@@ -18,29 +19,29 @@
                 <form method="get">
 
                     <div class="mb-3">
-                        <label class="form-label" for="id_status">Статус</label>
+                        <label class="form-label" for="id_status">{% translate 'Status' %}</label>
                         {{ filter.form.status }}
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label" for="id_executor">Исполнитель</label>
+                        <label class="form-label" for="id_executor">{% translate 'Executor' %}</label>
                         {{ filter.form.executor }}
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label" for="id_labels">Метки</label>
+                        <label class="form-label" for="id_labels">{% translate 'Labels' %}</label>
                         {{ filter.form.labels }}
                     </div>
 
                     <div class="form-check mb-3">
                         {{ filter.form.self_tasks }}
                         <label class="form-check-label" for="id_self_tasks">
-                            Только свои задачи
+                            {% translate 'Only my tasks' %}
                         </label>
                     </div>
 
                     <button class="btn btn-primary" type="submit">
-                        Показать
+                        {% translate 'Show' %}
                     </button>
 
                 </form>
@@ -52,10 +53,10 @@
         <thead>
             <tr class="fw-weight-bold">
                 <th>ID</th>
-                <th>Имя</th>
-                <th>Автор</th>
-                <th>Исполнитель</th>
-                <th>Дата создания</th>
+                <th>{% translate 'Name' %}</th>
+                <th>{% translate 'Author' %}</th>
+                <th>{% translate 'Executor' %}</th>
+                <th>{% translate 'Creation date' %}</th>
                 <th></th>
             </tr>
         </thead>
@@ -69,8 +70,8 @@
                 <td>{{ task.executor }}</td>
                 <td>{{ task.created_at }}</td>
                 <td>
-                    <a href="{% url 'tasks:update' task.id %}">Изменить</a><br>
-                    <a href="{% url 'tasks:delete' task.id %}">Удалить</a>
+                    <a href="{% url 'tasks:update' task.id %}">{% translate 'Edit' %}</a><br>
+                    <a href="{% url 'tasks:delete' task.id %}">{% translate 'Delete' %}</a>
                 </td>
             </tr>
         {% endfor %}
