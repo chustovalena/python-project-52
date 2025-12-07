@@ -1,8 +1,9 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block content %}
 <div class="container mt-4">
-    <h1>Изменить статус</h1>
+    <h1>{% translate 'Edit the status' %}</h1>
 
     <form method="post">
         {% csrf_token %}
@@ -15,7 +16,7 @@
             {{ form.name.errors }}
         </div>
 
-        <button class="btn btn-primary" type="submit">Изменить</button>
+        <button class="btn btn-primary" type="submit">{% translate 'Edit' %}</button>
     </form>
 </div>
 {% endblock %}

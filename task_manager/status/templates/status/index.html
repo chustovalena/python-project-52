@@ -1,14 +1,16 @@
 {% extends "base.html" %}
+{% load i18n %}
+
 {% block content %}
     <div class="container-fluid flex-grow-1">
-        <h1 class="my-4">Статусы</h1>
-        <a class="btn btn-primary mb-3" href="{% url 'statuses:create' %}">Создать статус</a>
+        <h1 class="my-4">{% translate 'Statuses' %}</h1>
+        <a class="btn btn-primary mb-3" href="{% url 'statuses:create' %}">{% translate 'Create a status' %}</a>
         <table class="table table-striped">
             <thead>
                 <tr class="fw-weight-bold">
                     <th scope="col" >ID</th>
-                    <th scope="col">Имя</th>
-                    <th scope="col">Дата создания</th>
+                    <th scope="col">{% translate 'Name' %}</th>
+                    <th scope="col">{% translate 'Creation date' %}</th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -19,8 +21,8 @@
                     <td>{{status.name}}</td>
                     <td>{{status.created_at}}</td>
                     <td>
-                        <a href="{% url 'statuses:update' status.id %}">Изменить</a><br>
-                        <a href="{% url 'statuses:delete' status.id %}">Удалить</a>
+                        <a href="{% url 'statuses:update' status.id %}">{% translate 'Edit' %}</a><br>
+                        <a href="{% url 'statuses:delete' status.id %}">{% translate 'Delete' %}</a>
                     </td>
                 </tr>
                 {% endfor %}
