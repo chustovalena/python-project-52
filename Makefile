@@ -20,8 +20,8 @@ lint:
 	uv run ruff check
 
 sonar:
-	pytest --cov=. --cov-report=xml
-	pysonar --sonar-token=$(SONAR_TOKEN)
+	uv run pytest --cov=. --cov-report=xml
+	uv run pysonar --sonar-token=$(SONAR_TOKEN)
 
 makemessages:
 	uv run manage.py makemessages -l ru
