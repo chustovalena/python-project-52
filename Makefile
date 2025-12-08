@@ -17,7 +17,7 @@ dev:
 	uv run manage.py runserver
 
 lint:
-	ruff check
+	uv run ruff check
 
 sonar:
 	pytest --cov=. --cov-report=xml
