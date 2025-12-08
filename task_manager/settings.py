@@ -3,10 +3,11 @@ from pathlib import Path
 from dotenv import load_dotenv
 import dj_database_url
 from django.contrib.messages import constants as message_constants
+import rollbar
+
 
 
 load_dotenv()
-
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
@@ -162,5 +163,4 @@ ROLLBAR = {
     'root': BASE_DIR,
 }
 
-import rollbar
 rollbar.init(**ROLLBAR)
