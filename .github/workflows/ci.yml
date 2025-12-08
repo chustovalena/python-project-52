@@ -27,6 +27,9 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
+      - name: Set Django SECRET_KEY
+        run: echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> $GITHUB_ENV
+
       - name: Run linters
         run: make lint
 
