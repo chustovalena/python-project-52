@@ -2,7 +2,6 @@ from django.views.generic import TemplateView
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib import messages
 from .forms import MyAuthenticationForm
-from django.http import HttpResponse
 from django.utils.translation import gettext as _
 
 
