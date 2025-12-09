@@ -75,7 +75,7 @@ class CustomUserUpdateForm(forms.ModelForm):
     password2 = forms.CharField(
         label=_('Password confirmation'),
         widget=forms.PasswordInput(attrs={
-            'placeholder': _('Password'),
+            'placeholder': _('Password confirmation'),
             'class': 'form-control'
         }),
         help_text=_('Please enter the password again to confirm.')
