@@ -17,7 +17,6 @@ def test_task_create_and_str(task_factory):
     assert str(task.author) == 'Author user'
 
 
-
 def test_labels_many_to_many(task_factory, label_factory):
     l1 = label_factory(name='first l')
     l2 = label_factory(name='second l')

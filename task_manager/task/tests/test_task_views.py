@@ -112,7 +112,7 @@ def test_task_delete_not_author(client_logged_in, task_factory, user_factory):
     response = client_logged_in.post(url, follow=True)
 
     assert Task.objects.count() == 1
-    assert 'The task can only be deleted by its author.' in response.content.decode()
+    assert 'Task can only be deleted by its author' in response.content.decode()
 
 
 @pytest.mark.django_db

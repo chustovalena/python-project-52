@@ -16,7 +16,8 @@ class CustomLoginView(LoginView):
     form_class = MyAuthenticationForm
 
     def form_valid(self, form):
-        messages.success(self.request, _("You have successfully logged into your account!"))
+        messages.success(self.request,
+                         _("You have successfully logged into your account!"))
         return super().form_valid(form)
 
 
@@ -24,5 +25,6 @@ class CustomLogoutView(LogoutView):
     next_page = reverse_lazy('home')
 
     def dispatch(self, request, *args, **kwargs):
-        messages.info(request, _("You have successfully logged out of your account"))
+        messages.info(request,
+                      _("You have successfully logged out of your account"))
         return super().dispatch(request, *args, **kwargs)
