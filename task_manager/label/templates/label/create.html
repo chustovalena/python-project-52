@@ -7,14 +7,26 @@
     <form method="post">
         {% csrf_token %}
 
-        {{ form.non_field_errors }}
-
+        {% for field in form %}
         <div class="mb-3">
-            {{ form.name.label_tag }}
-            {{ form.name }}
-            {{ form.name.errors }}
-        </div>
 
+            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}
+
+            {% if field.help_text %}
+                <div class="form-text text-muted" style="font-size: 0.875em;">
+                {{ field.help_text|safe }}
+                </div>
+            {% endif %}
+
+            {% if field.errors %}
+                <div class="text-danger" style="font-size: 0.9em;">
+                {{ field.errors }}
+                </div>
+            {% endif %}
+
+        </div>
+        {% endfor %}
         <button class="btn btn-primary" type="submit">{% translate  'Create' %}</button>
     </form>
 </div>
