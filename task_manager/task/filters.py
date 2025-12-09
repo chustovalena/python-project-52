@@ -26,7 +26,7 @@ class TaskFilter(django_filters.FilterSet):
         self.form.fields['executor'].widget.attrs.update({
             'class': 'form-select form-control'
         })
-        self.form.fields['labels'].widget.attrs.update({
+        self.form.fields['labels'].widget = forms.Select(attrs={
             'class': 'form-select form-control'
         })
 
