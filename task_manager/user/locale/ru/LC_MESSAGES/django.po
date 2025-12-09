@@ -33,6 +33,11 @@ msgstr "Введите имя пользователя"
 msgid "Required field. Only letters, numbers, and symbols @/./+/-/_."
 msgstr "Обязательное поле. Только буквы, цифры и символы @/./+/-/_."
 
+#: task_manager/user/forms.py:18 task_manager/user/forms.py:20
+#: task_manager/user/forms.py:67 task_manager/user/forms.py:69
+msgid "Password"
+msgstr "Пароль"
+
 #: task_manager/user/forms.py:23 task_manager/user/forms.py:72
 msgid "· Your password must contain at least 8 characters."
 msgstr "· Ваш пароль должен содержать не менее 8 символов."
@@ -55,10 +60,6 @@ msgstr "Имя"
 #: task_manager/user/forms.py:92 task_manager/user/forms.py:94
 msgid "Last name"
 msgstr "Фамилия"
-
-#: task_manager/user/forms.py:67 task_manager/user/forms.py:69
-msgid "Password"
-msgstr "Пароль"
 
 #: task_manager/user/forms.py:107
 msgid "A user with that username already exists."

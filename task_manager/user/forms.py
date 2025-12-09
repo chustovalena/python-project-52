@@ -15,9 +15,9 @@ class CustomUserCreationForm(UserCreationForm):
     )
 
     password1 = forms.CharField(
-        label='Password',
+        label=_('Password'),
         widget=forms.PasswordInput(attrs={
-            'placeholder': 'Password',
+            'placeholder': _('Password'),
             'class': 'form-control'
         }),
         help_text=_('· Your password must contain at least 8 characters.')
