@@ -36,15 +36,15 @@ msgstr "Создать"
 
 #: task_manager/status/templates/status/delete.html:6
 msgid "Delete the status"
-msgstr "Удалить статус"
+msgstr "Удаление статуса"
 
 #: task_manager/status/templates/status/delete.html:7
 msgid "Are you sure you want to delete the status"
-msgstr "Вы уверены, что хотите удалить этот статус"
+msgstr "Вы уверены, что хотите удалить "
 
 #: task_manager/status/templates/status/delete.html:11
 msgid "Yes, delete the status"
-msgstr "Да, удалить этот статус"
+msgstr "Да, удалить"
 
 #: task_manager/status/templates/status/index.html:6
 msgid "Statuses"
@@ -69,11 +69,11 @@ msgstr "Изменить статус"
 
 #: task_manager/status/views.py:26
 msgid "The status was created successfully"
-msgstr "Статус был успешно создан"
+msgstr "Статус успешно создан"
 
 #: task_manager/status/views.py:37
 msgid "The status was updated successfully"
-msgstr "Статус был успешно изменен"
+msgstr "Статус успешно изменен"
 
 #: task_manager/status/views.py:50
 msgid "The status that is used by tasks cannot be deleted."
