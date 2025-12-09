@@ -76,8 +76,6 @@ msgid "The status was updated successfully"
 msgstr "Статус успешно изменен"
 
 #: task_manager/status/views.py:51
-#, fuzzy
-#| msgid "The status that is used by tasks cannot be deleted."
 msgid "Status is used by tasks."
 msgstr "Невозможно удалить статус, потому что он используется"
 
