@@ -24,9 +24,9 @@ class CustomUserCreationForm(UserCreationForm):
     )
 
     password2 = forms.CharField(
-        label='Password confirmation',
+        label=_('Password confirmation'),
         widget=forms.PasswordInput(attrs={
-            'placeholder': 'Password',
+            'placeholder': _('Password confirmation'),
             'class': 'form-control'
         }),
         help_text=_('Please enter the password again to confirm.')

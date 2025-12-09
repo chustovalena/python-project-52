@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-09 00:29+0000\n"
+"POT-Creation-Date: 2025-12-09 00:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,6 +37,11 @@ msgstr "Обязательное поле. Только буквы, цифры �
 msgid "· Your password must contain at least 8 characters."
 msgstr "· Ваш пароль должен содержать не менее 8 символов."
 
+#: task_manager/user/forms.py:27 task_manager/user/forms.py:29
+#: task_manager/user/forms.py:76 task_manager/user/forms.py:78
+msgid "Password confirmation"
+msgstr "Подтверждение пароля"
+
 #: task_manager/user/forms.py:32 task_manager/user/forms.py:81
 msgid "Please enter the password again to confirm."
 msgstr "Пожалуйста, введите пароль еще раз для подтверждения."
@@ -54,10 +59,6 @@ msgstr "Фамилия"
 #: task_manager/user/forms.py:67 task_manager/user/forms.py:69
 msgid "Password"
 msgstr "Пароль"
-
-#: task_manager/user/forms.py:76 task_manager/user/forms.py:78
-msgid "Password confirmation"
-msgstr "Подтверждение пароля"
 
 #: task_manager/user/forms.py:107
 msgid "A user with that username already exists."
