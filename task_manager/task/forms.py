@@ -37,5 +37,5 @@ class TaskForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields['executor'].queryset = User.objects.all()
         self.fields['executor'].label_from_instance = (
-            lambda user: user.username
+            lambda user: user.get_full_name() or user.username
         )
