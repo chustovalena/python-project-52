@@ -22,7 +22,7 @@ class UserCreateView(CreateView):
     model = User
     form_class = CustomUserCreationForm
     template_name = "user/create.html"
-    success_url = reverse_lazy("users:index")
+    success_url = reverse_lazy("login")
     
     def form_valid(self, form):
         messages.success(self.request, _('The user has been successfully registered'))
