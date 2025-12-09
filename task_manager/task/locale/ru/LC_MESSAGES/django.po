@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-09 11:44+0000\n"
+"POT-Creation-Date: 2025-12-09 12:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,10 +20,16 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: task_manager/task/filters.py:10
+#: task_manager/task/filters.py:11
 #: task_manager/task/templates/task/index.html:39
 msgid "Only my tasks"
 msgstr "Только свои задачи"
+
+#: task_manager/task/filters.py:18
+#, fuzzy
+#| msgid "Labels"
+msgid "Label"
+msgstr "Метка"
 
 #: task_manager/task/forms.py:11 task_manager/task/forms.py:13
 #: task_manager/task/templates/task/index.html:56
@@ -94,7 +100,7 @@ msgstr ""
 
 #: task_manager/task/templates/task/detail.html:51
 #: task_manager/task/templates/task/index.html:81
-#: task_manager/task/templates/task/update.html:30
+#: task_manager/task/templates/task/update.html:31
 msgid "Edit"
 msgstr "Изменить"
 
@@ -119,7 +125,7 @@ msgstr "Метка"
 msgid "Show"
 msgstr "Показать"
 
-#: task_manager/task/templates/task/update.html:5
+#: task_manager/task/templates/task/update.html:6
 msgid "Edit the task"
 msgstr "Изменить задачу"
 
@@ -138,8 +144,3 @@ msgstr "Задача успешно удалена"
 #: task_manager/task/views.py:58
 msgid "The task can only be deleted by its author."
 msgstr "Задачу может удалить только ее автор"
-
-#, fuzzy
-#~| msgid "Labels"
-#~ msgid "Label"
-#~ msgstr "Метка"
