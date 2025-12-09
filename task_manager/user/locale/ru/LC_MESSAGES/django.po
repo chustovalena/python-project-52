@@ -154,4 +154,4 @@ msgstr "Пользователь был успешно удален"
 
 #: task_manager/user/views.py:60
 msgid "You don't have the rights to delete another user."
-msgstr "У вас нет прав для удаления другого пользователя."
+msgstr "У вас нет прав для изменения другого пользователя."

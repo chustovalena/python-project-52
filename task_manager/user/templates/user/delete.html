@@ -3,8 +3,8 @@
 
 {% block content %}
 <div class="container mt-4">
-    <h1>{% translate 'Delete the user' %}</h1>
-    <p>{% translate 'Are you sure you want to delete the user' %}: <b>{{ object.username }}</b>?</p>
+    <h1 class="my-4">{% translate 'Delete the user' %}</h1>
+    <p>{% translate 'Are you sure you want to delete the user' %} <b>{{ object.username }}</b>?</p>
 
     <form method="post">
         {% csrf_token %}

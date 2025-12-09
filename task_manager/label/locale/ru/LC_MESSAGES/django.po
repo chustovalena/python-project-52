@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-07 18:10+0000\n"
+"POT-Creation-Date: 2025-12-09 08:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,19 +36,25 @@ msgstr "Создать"
 
 #: task_manager/label/templates/label/delete.html:6
 msgid "Delete a label"
-msgstr "Удалить метку"
+msgstr "Удаление метки"
 
 #: task_manager/label/templates/label/delete.html:7
 msgid "Are you sure you want to delete the label"
-msgstr "Вы уверены, что хотите удалить метку"
+msgstr "Вы уверены, что хотите удалить"
 
 #: task_manager/label/templates/label/delete.html:11
 msgid "Yes, delete the label"
-msgstr "Да, удалить метку"
+msgstr "Да, удалить"
 
 #: task_manager/label/templates/label/index.html:6
 msgid "Labels"
 msgstr "Метки"
+
+#: task_manager/label/templates/label/index.html:13
+#, fuzzy
+#| msgid "Create"
+msgid "Creation date"
+msgstr "Дата создания"
 
 #: task_manager/label/templates/label/index.html:24
 #: task_manager/label/templates/label/update.html:19
@@ -65,16 +71,16 @@ msgstr "Изменить метку"
 
 #: task_manager/label/views.py:27
 msgid "The label was created successfully"
-msgstr "Метка была создана успешно"
+msgstr "Метка успешно создана"
 
 #: task_manager/label/views.py:38
 msgid "The label was updated successfully"
-msgstr "Метка была успешно изменена"
+msgstr "Метка успешно изменена"
 
 #: task_manager/label/views.py:50
 msgid "It is not possible to delete a label because it is used in tasks."
-msgstr "Невозможно удалить метку, так как она используется в задачах."
+msgstr "Невозможно удалить метку, потому что она используется"
 
 #: task_manager/label/views.py:52
 msgid "The label was deleted successfully"
-msgstr "Метка была успешно удаленв"
+msgstr "Метка успешно удаленв"

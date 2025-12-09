@@ -51,7 +51,7 @@ msgstr "Исполнитель"
 #: task_manager/task/templates/task/detail.html:33
 #: task_manager/task/templates/task/index.html:32
 msgid "Labels"
-msgstr "Метки"
+msgstr "Метка"
 
 #: task_manager/task/templates/task/create.html:6
 #: task_manager/task/templates/task/index.html:9
@@ -64,11 +64,11 @@ msgstr "Создать"
 
 #: task_manager/task/templates/task/delete.html:6
 msgid "Delete the task"
-msgstr "Удалить задачу"
+msgstr "Удаление задачи"
 
 #: task_manager/task/templates/task/delete.html:7
 msgid "Are you sure you want to delete the task"
-msgstr "Вы уверены, что хотите удалить "
+msgstr "Вы уверены, что хотите удалить"
 
 #: task_manager/task/templates/task/delete.html:11
 msgid "Yes, delete the task"
@@ -121,16 +121,16 @@ msgstr "Изменить задачу"
 
 #: task_manager/task/views.py:30
 msgid "The task was created successfully"
-msgstr "Задача была успешно создана"
+msgstr "Задача успешно создана"
 
 #: task_manager/task/views.py:41
 msgid "The task was updated successfully"
-msgstr "Задача была успешно изменена"
+msgstr "Задача успешно изменена"
 
 #: task_manager/task/views.py:51
 msgid "The task was deleted successfully"
-msgstr "Задача была успешно удалена"
+msgstr "Задача успешно удалена"
 
 #: task_manager/task/views.py:58
 msgid "The task can only be deleted by its author."
-msgstr "Задача может быть удалена только её автором."
+msgstr "Задачу может удалить только ее автор"

@@ -23,7 +23,7 @@ msgstr ""
 #: task_manager/status/forms.py:12 task_manager/status/forms.py:17
 #: task_manager/status/templates/status/index.html:12
 msgid "Name"
-msgstr ""
+msgstr "Имя"
 
 #: task_manager/status/templates/status/create.html:6
 #: task_manager/status/templates/status/index.html:7
@@ -40,7 +40,7 @@ msgstr "Удаление статуса"
 
 #: task_manager/status/templates/status/delete.html:7
 msgid "Are you sure you want to delete the status"
-msgstr "Вы уверены, что хотите удалить "
+msgstr "Вы уверены, что хотите удалить"
 
 #: task_manager/status/templates/status/delete.html:11
 msgid "Yes, delete the status"
@@ -77,8 +77,8 @@ msgstr "Статус успешно изменен"
 
 #: task_manager/status/views.py:50
 msgid "The status that is used by tasks cannot be deleted."
-msgstr "Статус, использующийся в задачах нельзя удалить"
+msgstr "Невозможно удалить статус, потому что он используется"
 
 #: task_manager/status/views.py:52
 msgid "The status was deleted successfully"
-msgstr "Статус был успешно удален"
+msgstr "Статус успешно удален"
