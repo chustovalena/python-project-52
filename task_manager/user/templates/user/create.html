@@ -3,29 +3,29 @@
 
 {% block content %}
 <div class="container mt-4">
-  <h1>{% translate 'Registration' %}</h1>
+  <h1 class="my-4">{% translate 'Registration' %}</h1>
   <form method="post">
     {% csrf_token %}
 
     {% for field in form %}
-      <div class="mb-3">
+    <div class="mb-3">
 
-        {{ field.label_tag }}
-        {{ field }}
+      <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+      {{ field }}
 
-        {% if field.help_text %}
-          <div class="form-text text-muted" style="font-size: 0.875em;">
-            {{ field.help_text|safe }}
-          </div>
-        {% endif %}
+      {% if field.help_text %}
+        <div class="form-text text-muted" style="font-size: 0.875em;">
+          {{ field.help_text|safe }}
+        </div>
+      {% endif %}
 
-        {% if field.errors %}
-          <div class="text-danger" style="font-size: 0.9em;">
-            {{ field.errors }}
-          </div>
-        {% endif %}
+      {% if field.errors %}
+        <div class="text-danger" style="font-size: 0.9em;">
+          {{ field.errors }}
+        </div>
+      {% endif %}
 
-      </div>
+    </div>
     {% endfor %}
 
     <button type="submit" class="btn btn-primary">{% translate 'Sign up' %}</button>
