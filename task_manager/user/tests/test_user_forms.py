@@ -1,11 +1,16 @@
 import pytest
-from task_manager.user.forms import CustomUserCreationForm, CustomUserUpdateForm
+from task_manager.user.forms import (
+    CustomUserCreationForm,
+    CustomUserUpdateForm
+)
 
 
 def test_user_create_form_fields():
     form = CustomUserCreationForm()
 
-    test_fields = ['first_name', 'last_name', 'username', 'password1', 'password2']
+    test_fields = [
+        'first_name', 'last_name', 'username', 'password1', 'password2'
+    ]
 
     for f in test_fields:
         assert f in form.fields

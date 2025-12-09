@@ -33,7 +33,8 @@ class TaskFilter(django_filters.FilterSet):
             'class': 'form-select form-control'
         })
 
-        self.form.fields['executor'].label_from_instance = lambda obj: obj.get_full_name() or obj.username
+        self.form.fields['executor'].label_from_instance = \
+            lambda obj: obj.get_full_name() or obj.username
 
     def filter_self_tasks(self, queryset, name, value):
         if value:

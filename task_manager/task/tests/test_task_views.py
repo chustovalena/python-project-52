@@ -110,9 +110,9 @@ def test_task_delete_not_author(client_logged_in, task_factory, user_factory):
     url = reverse('tasks:delete', args=[task.id])
 
     response = client_logged_in.post(url, follow=True)
-
+    phrase = 'Task can only be deleted by its author'
     assert Task.objects.count() == 1
-    assert 'Task can only be deleted by its author' in response.content.decode()
+    assert phrase in response.content.decode()
 
 
 @pytest.mark.django_db
@@ -147,7 +147,3 @@ def test_task_detail_success(client_logged_in, task_factory):
     assert response.status_code == 200
     assert 'task/detail.html' in [t.name for t in response.templates]
     assert response.context["task"].name == "Task 1"
-    
-
-
-
