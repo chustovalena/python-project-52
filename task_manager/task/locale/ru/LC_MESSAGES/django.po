@@ -127,7 +127,7 @@ msgstr "Показать"
 
 #: task_manager/task/templates/task/update.html:6
 msgid "Edit the task"
-msgstr "Изменить задачу"
+msgstr "Изменение задачи"
 
 #: task_manager/task/views.py:30
 msgid "The task was created successfully"
