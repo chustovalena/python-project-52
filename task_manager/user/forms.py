@@ -56,7 +56,6 @@ class CustomUserCreationForm(UserCreationForm):
         ]
 
 
-
 class CustomUserUpdateForm(forms.ModelForm):
     username = forms.CharField(
         label=_('Username'),
