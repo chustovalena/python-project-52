@@ -27,11 +27,11 @@ msgstr "Имя пользователя"
 
 #: task_manager/user/forms.py:11 task_manager/user/forms.py:60
 msgid "Enter the username"
-msgstr "Введите имя пользователя"
+msgstr "Имя пользователя"
 
 #: task_manager/user/forms.py:14 task_manager/user/forms.py:63
 msgid "Required field. Only letters, numbers, and symbols @/./+/-/_."
-msgstr "Обязательное поле. Только буквы, цифры и символы @/./+/-/_."
+msgstr "Обязательное поле. Не более 150 символов. Только буквы, цифры и символы @/./+/-/_."
 
 #: task_manager/user/forms.py:18 task_manager/user/forms.py:20
 #: task_manager/user/forms.py:67 task_manager/user/forms.py:69
@@ -49,7 +49,7 @@ msgstr "Подтверждение пароля"
 
 #: task_manager/user/forms.py:32 task_manager/user/forms.py:81
 msgid "Please enter the password again to confirm."
-msgstr "Пожалуйста, введите пароль еще раз для подтверждения."
+msgstr "Для подтверждения введите, пожалуйста, пароль ещё раз."
 
 #: task_manager/user/forms.py:36 task_manager/user/forms.py:38
 #: task_manager/user/forms.py:85 task_manager/user/forms.py:87
@@ -71,7 +71,7 @@ msgstr "Регистрация"
 
 #: task_manager/user/templates/user/create.html:31
 msgid "Sign up"
-msgstr "Зарегистрироваться"
+msgstr "Зарегистрировать"
 
 #: task_manager/user/templates/user/delete.html:6
 msgid "Delete the user"
