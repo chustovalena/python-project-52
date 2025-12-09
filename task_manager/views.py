@@ -3,6 +3,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib import messages
 from .forms import MyAuthenticationForm
 from django.utils.translation import gettext as _
+from django.urls import reverse_lazy
 
 
 class HomePageView(TemplateView):
@@ -20,7 +21,7 @@ class CustomLoginView(LoginView):
 
 
 class CustomLogoutView(LogoutView):
-    next_page = "login"
+    next_page = reverse_lazy('home')
 
     def dispatch(self, request, *args, **kwargs):
         messages.info(request, _("You have successfully logged out of your account"))
