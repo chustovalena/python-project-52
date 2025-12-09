@@ -14,39 +14,39 @@
     </button>
 
     <!--<div class="collapse" id="filterCollapse">-->
-        <div class="card mb-3">
-            <div class="card-body bg-light">
-                <form method="get">
+    <div class="card mb-3">
+        <div class="card-body bg-light">
+            <form method="get">
 
-                    <div class="mb-3">
-                        <label class="form-label" for="id_status">{% translate 'Status' %}</label>
-                        {{ filter.form.status }}
-                    </div>
+                <div class="mb-3">
+                    <label class="form-label" for="id_status">{% translate 'Status' %}</label>
+                    {{ filter.form.status }}
+                </div>
 
-                    <div class="mb-3">
-                        <label class="form-label" for="id_executor">{% translate 'Executor' %}</label>
-                        {{ filter.form.executor.get_full_name }}
-                    </div>
+                <div class="mb-3">
+                    <label class="form-label" for="id_executor">{% translate 'Executor' %}</label>
+                    {{ filter.form.executor.get_full_name }}
+                </div>
 
-                    <div class="mb-3">
-                        <label class="form-label" for="id_labels">{% translate 'Labels' %}</label>
-                        {{ filter.form.labels }}
-                    </div>
+                <div class="mb-3">
+                    <label class="form-label" for="id_labels">{% translate 'Labels' %}</label>
+                    {{ filter.form.labels }}
+                </div>
 
-                    <div class="form-check mb-3">
-                        {{ filter.form.self_tasks }}
-                        <label class="form-check-label" for="id_self_tasks">
-                            {% translate 'Only my tasks' %}
-                        </label>
-                    </div>
+                <div class="form-check mb-3">
+                    {{ filter.form.self_tasks }}
+                    <label class="form-check-label" for="id_self_tasks">
+                        {% translate 'Only my tasks' %}
+                    </label>
+                </div>
 
-                    <button class="btn btn-primary" type="submit">
-                        {% translate 'Show' %}
-                    </button>
+                <button class="btn btn-primary" type="submit">
+                    {% translate 'Show' %}
+                </button>
 
-                </form>
-            </div>
+            </form>
         </div>
+    </div>
     <!--</div>-->
 
     <table class="table table-striped">
