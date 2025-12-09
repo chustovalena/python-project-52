@@ -98,7 +98,7 @@ def test_status_delete_fk(client_logged_in, task_factory, status_factory):
     response = client_logged_in.post(url, follow=True)
     status.refresh_from_db()
 
-    assert "The status that is used by tasks cannot be deleted." in response.content.decode()
+    assert "Status is used by tasks." in response.content.decode()
     assert Status.objects.count() == 1
 
 

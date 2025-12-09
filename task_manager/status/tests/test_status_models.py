@@ -1,6 +1,3 @@
-
-
-
 def test_status_create_and_str(status_factory):
     status = status_factory(name='first status')
 

@@ -16,6 +16,7 @@ class StatusIndexView(LoginRequiredMixin, ListView):
     context_object_name = 'statuses'
     paginate_by = 15
 
+
 class StatusCreateView(LoginRequiredMixin, CreateView):
     model = Status
     form_class = CustomStatusCreationForm
@@ -47,7 +48,7 @@ class StatusDeleteView(LoginRequiredMixin, DeleteView):
         status = self.get_object()
 
         if status.task_set.exists():
-            messages.error(self.request, _("The status that is used by tasks cannot be deleted."))
+            messages.error(self.request, _("Status is used by tasks."))
             return redirect(self.success_url)
         messages.success(self.request, _('The status was deleted successfully'))
         return super().form_valid(form)
