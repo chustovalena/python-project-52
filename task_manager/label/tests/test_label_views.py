@@ -99,8 +99,8 @@ def test_status_delete_fk(client_logged_in, task_factory, label_factory):
 
     response = client_logged_in.post(url, follow=True)
     label.refresh_from_db()
-    phrase = 'It is not possible to delete a label because it is used in tasks.'
-    assert phrase in response.content.decode()
+    
+    assert 'Label is used in tasks.' in response.content.decode()
     assert Label.objects.count() == 1
 
 
