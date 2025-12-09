@@ -3,31 +3,12 @@
 
 {% block content %}
 <div class="container mt-4">
-    <h1>{% translate 'Edit the label' %}</h1>
+    <h1 class="my-4">{% translate 'Edit the label' %}</h1>
 
     <form method="post">
         {% csrf_token %}
 
-        {% for field in form %}
-        <div class="mb-3">
-
-            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-            {{ field }}
-
-            {% if field.help_text %}
-                <div class="form-text text-muted" style="font-size: 0.875em;">
-                {{ field.help_text|safe }}
-                </div>
-            {% endif %}
-
-            {% if field.errors %}
-                <div class="text-danger" style="font-size: 0.9em;">
-                {{ field.errors }}
-                </div>
-            {% endif %}
-
-        </div>
-        {% endfor %}
+        {% include "partials/form_fields.html" %}
 
         <button class="btn btn-primary" type="submit">{% translate 'Edit' %}</button>
     </form>
