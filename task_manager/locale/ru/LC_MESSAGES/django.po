@@ -22,7 +22,7 @@ msgstr ""
 
 #: task_manager/forms.py:8 task_manager/forms.py:10
 msgid "Username"
-msgstr ""
+msgstr "Имя пользователя"
 
 #: task_manager/forms.py:16 task_manager/forms.py:18
 msgid "Password"
