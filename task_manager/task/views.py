@@ -9,6 +9,7 @@ from .filters import TaskFilter
 from django.shortcuts import redirect
 from django.utils.translation import gettext as _
 
+
 class TaskIndexView(LoginRequiredMixin, FilterView):
     model = Task
     template_name = 'task/index.html'

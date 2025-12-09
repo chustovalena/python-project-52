@@ -48,8 +48,5 @@ class LabelDeleteView(LoginRequiredMixin, DeleteView):
         if self.object.tasks.exists():
             messages.error(request, _('Label is used in tasks.'))
             return redirect(self.success_url)
-        messages.success(request,  _('The label was deleted successfully'))
+        messages.success(request, _('The label was deleted successfully'))
         return super().post(request, *args, **kwargs)
-
-
-

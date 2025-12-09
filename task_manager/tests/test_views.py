@@ -2,6 +2,7 @@ import pytest
 from django.urls import reverse
 from django.contrib.messages import get_messages
 
+
 @pytest.mark.django_db
 def test_home_page_view(client):
     url = reverse('home')

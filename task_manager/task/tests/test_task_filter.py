@@ -91,7 +91,8 @@ def test_task_filter_executor(status_factory, user_factory, task_factory):
     assert list(filtered.qs) == [task2]
 
 
-def test_task_filter_labels(status_factory, label_factory, user_factory, task_factory):
+def test_task_filter_labels(
+        status_factory, label_factory, user_factory, task_factory):
     user1 = user_factory(username='user1')
     status1 = status_factory(name='first')
 

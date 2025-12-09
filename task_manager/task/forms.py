@@ -6,6 +6,7 @@ from django.utils.translation import gettext_lazy as _
 
 User = get_user_model()
 
+
 class TaskForm(forms.ModelForm):
     name = forms.CharField(
         label=_('Name'),

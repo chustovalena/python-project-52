@@ -7,6 +7,7 @@ from django.utils.translation import gettext_lazy as _
 
 User = get_user_model()
 
+
 class Task(models.Model):
     name = models.CharField(
         max_length=255,

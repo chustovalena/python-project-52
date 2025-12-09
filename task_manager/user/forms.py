@@ -11,7 +11,9 @@ class CustomUserCreationForm(UserCreationForm):
             'placeholder': _('Enter the username'),
             'class': 'form-control',
         }),
-        help_text=_('Required field. Only letters, numbers, and symbols @/./+/-/_.')
+        help_text=_(
+            'Required field. Only letters, numbers, and symbols @/./+/-/_.'
+        )
     )
 
     password1 = forms.CharField(
@@ -49,7 +51,9 @@ class CustomUserCreationForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'username', 'password1', 'password2']
+        fields = [
+            'first_name', 'last_name', 'username', 'password1', 'password2'
+        ]
 
 
 
@@ -60,7 +64,9 @@ class CustomUserUpdateForm(forms.ModelForm):
             'placeholder': _('Enter the username'),
             'class': 'form-control',
         }),
-        help_text=_('Required field. Only letters, numbers, and symbols @/./+/-/_.')
+        help_text=_(
+            'Required field. Only letters, numbers, and symbols @/./+/-/_.'
+        )
     )
 
     password1 = forms.CharField(
@@ -96,14 +102,20 @@ class CustomUserUpdateForm(forms.ModelForm):
         })
     )
     class Meta:
-        fields = ['first_name', 'last_name', 'username', 'password1', 'password2']
+        fields = [
+            'first_name', 'last_name', 'username', 'password1', 'password2'
+        ]
         model = User
 
     def clean_username(self):
         username = self.cleaned_data['username']
-        qs = User.objects.filter(username=username).exclude(pk=self.instance.pk)
+        qs = User.objects.filter(username=username).exclude(
+            pk=self.instance.pk
+        )
 
         if qs.exists():
-            raise forms.ValidationError(_("A user with that username already exists."))
+            raise forms.ValidationError(_(
+                "A user with that username already exists."
+            ))
         return username
     

@@ -14,7 +14,8 @@ def test_index_users(client):
 
 
 @pytest.mark.django_db
-def test_task_index_users_logged(client_logged_in, task_factory, user_factory, status_factory):
+def test_task_index_users_logged(
+        client_logged_in, task_factory, user_factory, status_factory):
     status = status_factory(name='first')
     user = user_factory(name='kuku', password='pass')
     task_factory(name='first', author=user, status=status)
