@@ -8,7 +8,6 @@ from django.contrib import messages
 from django.utils.translation import gettext as _
 
 
-
 class LabelIndexView(LoginRequiredMixin, ListView):
     model = Label
     context_object_name = 'labels'
@@ -47,7 +46,7 @@ class LabelDeleteView(LoginRequiredMixin, DeleteView):
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
         if self.object.tasks.exists():
-            messages.error(request, _('It is not possible to delete a label because it is used in tasks.'))
+            messages.error(request, _('Label is used in tasks.'))
             return redirect(self.success_url)
         messages.success(request,  _('The label was deleted successfully'))
         return super().post(request, *args, **kwargs)

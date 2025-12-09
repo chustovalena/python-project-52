@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-09 10:27+0000\n"
+"POT-Creation-Date: 2025-12-09 12:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,18 +69,21 @@ msgstr "Удалить"
 msgid "Edit the label"
 msgstr "Изменить метку"
 
-#: task_manager/label/views.py:27
+#: task_manager/label/views.py:26
 msgid "The label was created successfully"
 msgstr "Метка успешно создана"
 
-#: task_manager/label/views.py:38
+#: task_manager/label/views.py:37
 msgid "The label was updated successfully"
 msgstr "Метка успешно изменена"
 
-#: task_manager/label/views.py:50
-msgid "It is not possible to delete a label because it is used in tasks."
+#: task_manager/label/views.py:49
+msgid "Label is used in tasks."
 msgstr "Невозможно удалить метку, потому что она используется"
 
-#: task_manager/label/views.py:52
+#: task_manager/label/views.py:51
 msgid "The label was deleted successfully"
 msgstr "Метка успешно удалена"
+
+#~ msgid "It is not possible to delete a label because it is used in tasks."
+#~ msgstr "Невозможно удалить метку, потому что она используется"

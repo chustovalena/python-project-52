@@ -80,9 +80,9 @@ def test_task_filter_labels(status_factory, label_factory, user_factory, task_fa
     task_factory(name='task1', status=status1, author=user1, labels=[label1])
     task2 = task_factory(name='task2', labels=[label2])
 
-    data = {'labels': [label2]}
+    data = {'labels': label2}
     request = RequestFactory().get('/tasks', data)
 
     filtered = TaskFilter(data=data, queryset=Task.objects.all(), request=request)
-
+    print(list(filtered.qs))
     assert list(filtered.qs) == [task2]
