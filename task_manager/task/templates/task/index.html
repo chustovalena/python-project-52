@@ -68,7 +68,7 @@
                 <td>{{ task.id }}</td>
                 <td><a href="{% url 'tasks:detail' task.id %}">{{ task.name }}</a></td>
                 <td>{{ task.status }}</td>
-                <td>{{ task.author }}</td>
+                <td>{{ task.author.get_full_name }}</td>
                 <td>
                     {% if task.executor.get_full_name %}
                         {{ task.executor.get_full_name }}
