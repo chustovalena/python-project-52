@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-07 18:18+0000\n"
+"POT-Creation-Date: 2025-12-09 11:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,30 +25,31 @@ msgstr ""
 msgid "Only my tasks"
 msgstr "Только свои задачи"
 
-#: task_manager/task/forms.py:8 task_manager/task/forms.py:10
+#: task_manager/task/forms.py:11 task_manager/task/forms.py:13
 #: task_manager/task/templates/task/index.html:56
 msgid "Name"
 msgstr "Имя"
 
-#: task_manager/task/forms.py:16 task_manager/task/forms.py:18
+#: task_manager/task/forms.py:19 task_manager/task/forms.py:21
 msgid "Description"
 msgstr "Описание"
 
 #: task_manager/task/models.py:13
-#: task_manager/task/templates/task/detail.html:24
+#: task_manager/task/templates/task/detail.html:30
 #: task_manager/task/templates/task/index.html:22
+#: task_manager/task/templates/task/index.html:57
 msgid "Status"
 msgstr "Статус"
 
 #: task_manager/task/models.py:15
 #: task_manager/task/templates/task/detail.html:20
 #: task_manager/task/templates/task/index.html:27
-#: task_manager/task/templates/task/index.html:58
+#: task_manager/task/templates/task/index.html:59
 msgid "Executor"
 msgstr "Исполнитель"
 
 #: task_manager/task/models.py:17
-#: task_manager/task/templates/task/detail.html:33
+#: task_manager/task/templates/task/detail.html:39
 #: task_manager/task/templates/task/index.html:32
 msgid "Labels"
 msgstr "Метка"
@@ -79,27 +80,27 @@ msgid "View the task"
 msgstr "Просмотр задачи"
 
 #: task_manager/task/templates/task/detail.html:16
-#: task_manager/task/templates/task/index.html:57
+#: task_manager/task/templates/task/index.html:58
 msgid "Author"
 msgstr "Автор"
 
-#: task_manager/task/templates/task/detail.html:28
-#: task_manager/task/templates/task/index.html:59
+#: task_manager/task/templates/task/detail.html:34
+#: task_manager/task/templates/task/index.html:60
 msgid "Creation date"
 msgstr "Дата создания"
 
-#: task_manager/task/templates/task/detail.html:38
+#: task_manager/task/templates/task/detail.html:44
 msgid "There are no labels"
 msgstr ""
 
-#: task_manager/task/templates/task/detail.html:45
-#: task_manager/task/templates/task/index.html:73
+#: task_manager/task/templates/task/detail.html:51
+#: task_manager/task/templates/task/index.html:81
 #: task_manager/task/templates/task/update.html:30
 msgid "Edit"
 msgstr "Изменить"
 
-#: task_manager/task/templates/task/detail.html:47
-#: task_manager/task/templates/task/index.html:74
+#: task_manager/task/templates/task/detail.html:53
+#: task_manager/task/templates/task/index.html:82
 msgid "Delete"
 msgstr "Удалить"
 

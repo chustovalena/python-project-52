@@ -54,6 +54,7 @@
             <tr class="fw-weight-bold">
                 <th>ID</th>
                 <th>{% translate 'Name' %}</th>
+                <th>{% translate 'Status' %}</th>
                 <th>{% translate 'Author' %}</th>
                 <th>{% translate 'Executor' %}</th>
                 <th>{% translate 'Creation date' %}</th>
@@ -66,6 +67,7 @@
             <tr>
                 <td>{{ task.id }}</td>
                 <td><a href="{% url 'tasks:detail' task.id %}">{{ task.name }}</a></td>
+                <td>{{ task.status }}</td>
                 <td>{{ task.author }}</td>
                 <td>
                     {% if task.executor.get_full_name %}
