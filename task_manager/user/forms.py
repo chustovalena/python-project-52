@@ -4,7 +4,8 @@ from django import forms
 from django.utils.translation import gettext_lazy as _
 
 
-class BaseUserForm(forms.ModelForm):
+class BaseUserFieldsMixin(forms.ModelForm):
+
     username = forms.CharField(
         label=_('Username'),
         widget=forms.TextInput(attrs={
@@ -53,18 +54,26 @@ class BaseUserForm(forms.ModelForm):
     class Meta:
         model = User
         fields = [
-            'first_name', 'last_name', 'username', 'password1', 'password2'
+            'first_name', 'last_name',
+            'username', 'password1', 'password2'
         ]
 
 
-class CustomUserCreationForm(UserCreationForm, BaseUserForm):
-    pass
+class CustomUserCreationForm(BaseUserFieldsMixin, UserCreationForm):
+    class Meta(BaseUserFieldsMixin.Meta, UserCreationForm.Meta):
+        fields = BaseUserFieldsMixin.Meta.fields
 
 
-class CustomUserUpdateForm(BaseUserForm):
+class CustomUserUpdateForm(BaseUserFieldsMixin):
+
+    class Meta(BaseUserFieldsMixin.Meta):
+        fields = BaseUserFieldsMixin.Meta.fields
+
     def clean_username(self):
         username = self.cleaned_data['username']
-        qs = User.objects.filter(username=username).exclude(pk=self.instance.pk)
+        qs = User.objects.filter(username=username).exclude(
+            pk=self.instance.pk
+        )
         if qs.exists():
             raise forms.ValidationError(
                 _("A user with that username already exists.")
