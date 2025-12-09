@@ -6,6 +6,7 @@ from django.contrib.messages import get_messages
 
 User = get_user_model()
 
+
 @pytest.mark.django_db
 def test_user_create_view(client):
     url = reverse('users:create')

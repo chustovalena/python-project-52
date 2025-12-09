@@ -5,15 +5,17 @@ from django.shortcuts import redirect
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .forms import CustomUserCreationForm, CustomUserUpdateForm
 from django.utils.translation import gettext as _
-from django.views.generic import (ListView,
-                                  CreateView,
-                                  UpdateView,
-                                  DeleteView,
-                                  DetailView
-                                  )
+from django.views.generic import (
+    ListView,
+    CreateView,
+    UpdateView,
+    DeleteView,
+    DetailView
+)
 
 
 User = get_user_model()
+
 
 class UserIndexView(ListView):
     model = User
