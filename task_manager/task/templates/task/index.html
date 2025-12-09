@@ -9,9 +9,9 @@
         {% translate 'Create a task' %}
     </a>
 
-    <button class="btn btn-secondary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse">
+    <!--<button class="btn btn-secondary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse">
         {% translate 'Filter' %}
-    </button>
+    </button>-->
 
     <!--<div class="collapse" id="filterCollapse">-->
     <div class="card mb-3">
@@ -25,11 +25,11 @@
 
                 <div class="mb-3">
                     <label class="form-label" for="id_executor">{% translate 'Executor' %}</label>
-                    {{ filter.form.executor.get_full_name }}
+                    {{ filter.form.executor }}
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label" for="id_labels">{% translate 'Labels' %}</label>
+                    <label class="form-label" for="id_labels">{% translate 'Label for filtered tasks' %}</label>
                     {{ filter.form.labels }}
                 </div>
 
