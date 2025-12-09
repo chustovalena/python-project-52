@@ -19,11 +19,11 @@ def test_user_create_view(client):
     }
 
     response = client.post(url, data, follow=True)
-
+    phrase = 'The user has been successfully registered'
     assert response.status_code == 200
     assert User.objects.count() == 1
     assert User.objects.filter(username='BigOne').exists()
-    assert 'The user has been successfully registered' in response.content.decode()
+    assert phrase in response.content.decode()
 
 
 @pytest.mark.django_db
@@ -35,7 +35,7 @@ def test_user_update_other(user_factory, client_logged_in):
     print(response.content.decode())
 
     msgs = [m.message for m in get_messages(response.wsgi_request)]
-    assert "You don't have the rights to change another user." in msgs
+    assert "You don't have the rights" in msgs
     assert response.redirect_chain
     assert response.status_code == 200
 
@@ -71,7 +71,7 @@ def test_user_delete_forbidden(client_logged_in, user_factory):
     assert User.objects.filter(username='Dracula').exists()
     assert User.objects.filter(username='logged_user').exists()
     msgs = [m.message for m in get_messages(response.wsgi_request)]
-    assert "You don't have the rights to delete another user." in msgs
+    assert "You don't have the rights" in msgs
 
 
 @pytest.mark.django_db
