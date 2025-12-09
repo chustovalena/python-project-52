@@ -78,11 +78,11 @@ msgstr "Зарегистрировать"
 
 #: task_manager/user/templates/user/delete.html:6
 msgid "Delete the user"
-msgstr "Удалить пользователя"
+msgstr "Удаление пользователя"
 
 #: task_manager/user/templates/user/delete.html:7
 msgid "Are you sure you want to delete the user"
-msgstr "Вы уверены, что хотите удалить пользователя"
+msgstr "Вы уверены, что хотите удалить"
 
 #: task_manager/user/templates/user/delete.html:11
 msgid "Yes, delete the user"
@@ -134,15 +134,15 @@ msgstr "Полное имя"
 
 #: task_manager/user/templates/user/update.html:6
 msgid "Edit the user"
-msgstr "Изменить пользователя"
+msgstr "Изменение пользователя"
 
 #: task_manager/user/views.py:28
 msgid "The user has been successfully registered"
-msgstr "Пользователь был успешно зарегестрирован"
+msgstr "Пользователь успешно зарегестрирован"
 
 #: task_manager/user/views.py:39
 msgid "The user was updated successfully"
-msgstr "Пользователь был успешно изменен"
+msgstr "Пользователь успешно изменен"
 
 #: task_manager/user/views.py:44
 msgid "You don't have the rights to change another user."
@@ -150,7 +150,7 @@ msgstr "У вас нет прав для изменения другого по�
 
 #: task_manager/user/views.py:55
 msgid "The user was deleted successfully"
-msgstr "Пользователь был успешно удален"
+msgstr "Пользователь успешно удален"
 
 #: task_manager/user/views.py:60
 msgid "You don't have the rights to delete another user."
