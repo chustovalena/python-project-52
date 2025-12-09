@@ -1,7 +1,10 @@
 from .models import Task
 from django import forms
+from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 
+
+User = get_user_model()
 
 class TaskForm(forms.ModelForm):
     name = forms.CharField(
@@ -29,6 +32,7 @@ class TaskForm(forms.ModelForm):
             'executor': forms.Select(attrs={'class': 'form-control'}),
             'labels': forms.SelectMultiple(attrs={'class': 'form-control'})
         }
-
-
     
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['executor'].queryset = User.objects.all()
