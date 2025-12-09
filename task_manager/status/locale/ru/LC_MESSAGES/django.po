@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-07 18:10+0000\n"
+"POT-Creation-Date: 2025-12-09 10:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgstr "Имя"
 msgid "Create a status"
 msgstr "Создать статус"
 
-#: task_manager/status/templates/status/create.html:19
+#: task_manager/status/templates/status/create.html:32
 msgid "Create"
 msgstr "Создать"
 
@@ -55,7 +55,7 @@ msgid "Creation date"
 msgstr "Дата создания"
 
 #: task_manager/status/templates/status/index.html:24
-#: task_manager/status/templates/status/update.html:19
+#: task_manager/status/templates/status/update.html:32
 msgid "Edit"
 msgstr "Изменить"
 

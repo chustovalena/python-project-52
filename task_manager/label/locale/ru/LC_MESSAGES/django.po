@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-09 08:59+0000\n"
+"POT-Creation-Date: 2025-12-09 10:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgstr "Имя"
 msgid "Create a label"
 msgstr "Создать метку"
 
-#: task_manager/label/templates/label/create.html:18
+#: task_manager/label/templates/label/create.html:30
 msgid "Create"
 msgstr "Создать"
 
@@ -57,7 +57,7 @@ msgid "Creation date"
 msgstr "Дата создания"
 
 #: task_manager/label/templates/label/index.html:24
-#: task_manager/label/templates/label/update.html:19
+#: task_manager/label/templates/label/update.html:32
 msgid "Edit"
 msgstr "Изменить"
 
@@ -83,4 +83,4 @@ msgstr "Невозможно удалить метку, потому что он
 
 #: task_manager/label/views.py:52
 msgid "The label was deleted successfully"
-msgstr "Метка успешно удаленв"
+msgstr "Метка успешно удалена"
