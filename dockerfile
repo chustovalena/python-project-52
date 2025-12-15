@@ -18,4 +18,5 @@ RUN uv sync --frozen
 
 COPY . .
 
-CMD ["uv", "run", "gunicorn", "task_manager.wsgi", "--bind", "0.0.0.0:8000"]
+ENTRYPOINT [ "uv", "run" ]
+CMD ["gunicorn", "task_manager.wsgi", "--bind", "0.0.0.0:8000"]
