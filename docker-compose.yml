@@ -4,7 +4,7 @@ services:
   web:
     build: .
     container_name: task_manager_web
-    command: uv run gunicorn task_manager.wsgi --bind 0.0.0.0:8000
+    command: gunicorn task_manager.wsgi --bind 0.0.0.0:8000
     ports:
       - "8000:8000"
     restart: unless-stopped
