@@ -28,3 +28,6 @@ makemessages:
 
 compilemessages:
 	uv run manage.py compilemessages --ignore=.venv
+
+docker:
+	docker compose up --build
